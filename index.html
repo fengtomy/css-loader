@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>css-loader</title>
+    <style>
+      .loader {
+        border: 16px solid #f4f4f4; /* Background color */
+        border-top: 16px solid #409eff; /* Animated color */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: load 2s linear infinite;
+      }
+
+      .loader-two {
+        border-bottom: 16px solid #409eff;
+      }
+
+      .loader-three {
+        position: relative;
+        border-top-color: #f4f4f4;
+      }
+
+      .loader-three .ball {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        background: #409eff;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 3px;
+      }
+
+      .loader-three .ball:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #409eff;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: 19px;
+        top: -14px;
+      }
+
+      .loader-three .ball:after {
+        content: "";
+        width: 20px;
+        height: 20px;
+        background: #409eff;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: 42px;
+        top: -21px;
+      }
+
+      @keyframes load {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="loader"></div>
+    <div class="loader loader-two"></div>
+    <div class="loader loader-three">
+      <div class="ball"></div>
+    </div>
+  </body>
+</html>
